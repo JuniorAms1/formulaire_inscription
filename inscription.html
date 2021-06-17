@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+
+ <style rel="stylesheet" type="text/css">
+    body{
+        
+        font-family: 'Trebuchet MS', Arial, sans-serif;
+        width: 1050px;
+        margin: auto;
+    }
+    
+.grid-container {
+  display: inline-grid;
+  grid-template-columns: auto auto;
+  grid-gap: 70px;
+  background-color: #fff;
+  padding: 20px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  font-size: 21px;
+  padding: 20px;
+}
+#un{
+width: 400px;
+height: 450px;
+background-color: #f8f8f8;
+text-align: justify;
+border-radius: 1em;
+
+}
+#deux{
+    width: 400px;
+    height: 450px;
+    background-color: #f8f8f8;
+    text-align: justify;
+    border-radius: 1em;
+}
+form{
+    background-color: #f8f8f8;
+}
+#btn_inscription{
+background-color: #ffd376;
+font-size: large;
+font-weight: bold;
+border: none;
+border-radius: 5%;
+box-shadow: 1px 1px 1px #303030;
+    
+}
+#btn_inscrire{
+background-color: #2d68a0;
+font-weight: 800;
+font-style: normal;
+color: #fff;
+float: right;
+border: solid #2d68a0;
+border-radius: 7%;
+}
+#fb{
+background-color: #4265b6;
+font-weight: 900;
+font-style: normal;
+color: #fff;
+float: center;
+border: 2px solid #2d68a0;
+border-radius: 5%;
+width: 100%;
+
+}
+form a{
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+}
+.col-50{
+  float: left;
+  width: 50%;
+}
+input[type=number],[type=email],[type=password]{
+  width: 100%;
+  padding-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  
+}
+input[name=prenom]{
+  width: 90%;
+  padding-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+input[name=nom]{
+  width: 100%;
+  padding-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+input:focus {
+    outline: none !important;
+    border-color:#2d68a0;
+    box-shadow: 0 0 10px #719ECE;
+}
+label{
+    text-transform: uppercase;
+    font-size: 15px;
+}
+.hr {
+    /* centre verticalement les enfants entre eux */
+    align-items: center;
+
+    /* active flexbox */
+    display: flex;
+
+    /* garde le texte centré s’il passe sur plusieurs lignes ou si flexbox n’est pas supporté */
+    text-align: center;
+
+    color: #303030;
+}
+
+.hr::before,
+.hr::after {
+    /* la couleur est volontairement absente ; ainsi elle sera celle du texte */
+    border-top: .0625em solid;
+
+    /* nécessaire pour afficher les pseudo-éléments */
+    content: "";
+
+    /* partage le reste de la largeur disponible */
+    flex: 1;
+
+    /* espace les traits du texte */
+    margin: 0 .5em;
+}
+button{
+    cursor: pointer;
+}
+.field-icon {
+  float: right;
+  margin-left: -25px;
+  margin-top: -25px;
+  position: relative;
+  z-index: 2;
+}
+
+.container{
+  padding-top:50px;
+  margin: auto;
+}
+p{
+    font-size: medium;
+    color: darkgray;
+}
+    </style>
+    <title>Formulaire Inscription</title>
+</head>
+<body>
+<section id="bloc_form">
+
+    <br><br><br>
+    <button id="btn_inscription">INSCRIPTION</button>
+    <br><br><br>
+    
+<div class="grid-container">
+    <div id="un">
+        <h2>Inscription</h2>
+        <p>Votre chauffeur en un clic !</p>
+        <button id="fb">Continuer avec Facebook</button>
+       &nbsp;
+            <span class="hr">ou</span>
+            <br>
+        
+        <form action="/action_page.php">
+            <label for="Email">Email</label><br>
+            <input type="email" id="Email" name="Email" required>
+            <span id="Mail_Manquant"></span>
+            <br>
+            <label for="pwd">Mot-de-passe</label><br>
+            <input type="password" id="pwd" name="password" required>
+            <span id="Mdp_Manquant"></span>
+            <span onclick="myFunction()" class="fa fa-fw fa-eye field-icon"></span>
+            <br>
+            <p>
+                <a href="#">J'ai déjà un compte</a>
+                <button id="btn_inscrire">S'inscrire&nbsp;&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+            </p>
+          </form> 
+        
+    </div>
+    <div id="deux">
+        <h2>Bienvenue</h2>
+        <p>Finalisez votre inscription en renseignant les informations manquantes</p>
+        
+        <form action="/action_page.php">
+            <div class="col-50">
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom" name="prenom" required>
+                <span id="Prenom_Manquant"></span>
+            </div>
+            <div class="col-50">
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" name="nom" required>
+                <span id="Nom_Manquant"></span>
+            </div>
+          
+            <label for="tel">Téléphone</label><br>
+            <input type="number" id="tel" name="telephone" required>
+            <span id="Tel_Manquant"></span>
+            <br><br><br>
+            
+          <p> <a href="#"><i class="fa fa-gift" aria-hidden="true"></i>&nbsp;&nbsp;Ajouter un code promo</i></a></p><br> 
+           <button id="btn_inscrire">S'inscrire&nbsp;&nbsp;<i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+          </form> 
+       
+</div>
+  </div>
+</section>
+    
+</body>
+<script  type="text/javascript">
+function myFunction() {
+  var x = document.getElementById("pwd");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
+
+ <script type="text/javascript">
+		
+  var prenom = document.getElementById("prenom");
+  var prenom_requis = document.getElementById("Prenom_Manquant");
+  prenom.addEventListener("blur", function(){
+    if(prenom.value==="" || !isNaN(prenom.value)){
+       prenom_requis.innerHTML="Champ requis";
+       prenom_requis.style.color="#4265b6";
+    }
+    else{
+       prenom_requis.innerHTML="";
+    }
+  });
+  var nom = document.getElementById("nom");
+  var nom_requis = document.getElementById("Nom_Manquant");
+  nom.addEventListener("blur", function(){
+    if(nom.value ===" " || !isNaN(nom.value)){
+      nom_requis.innerHTML = "Champ requis";
+      nom_requis.style.color = "#4265b6";
+    }
+    else{
+      nom_requis.innerHTML=" ";
+    }
+  });
+  var mail = document.getElementById("Email");
+    var regex = /.+@.+\..+/;
+    mail.addEventListener("blur",function(e){
+    var valide="";
+    
+     if(!regex.test(e.target.value)){
+     valide = "Entrez une adresse valide,vous aussi serieux SVP";
+     
+     }
+     var novalide = document.getElementById("Mail_Manquant");
+     novalide.innerText = valide;
+
+    });
+  
+  var tel = document.getElementById("tel");
+  var Tel_requis = document.getElementById("Tel_Manquant");
+ Téléphone.addEventListener("blur", function(){
+    if(Téléphone.value === " " || !isNaN(Téléphone.value)){
+      Tel_requis.innerHTML = "Champ requis";
+      Tel_requis.style.color = "#4265b6";
+      }
+    else{
+      Tel_requis.innerHTML=" ";
+      }
+  });
+  
+  
+  
+  var mdp = document.getElementById("pwd");
+  var mdp_requis = document.getElementById("Mdp_Manquant")
+  message.addEventListener("blur", function(){
+    if(Mot-de-passe.value ==="" ){
+      mdp_requis.innerHTML ="Champ requis";
+      mdp_requis.style.color ="#4265b6";
+      }
+    else{
+      mdp_requis.innerHTML="";
+      }
+  });
+
+var validation = document.getElementById("Submit_envoi");
+validation.addEventListener("click",function(){
+if(Email.value =="" || Mot-de-passe.value =="" || nom.value =="" || prenom.value =="" ||  
+Téléphone.value =="" )
+{
+alert("Veuillez Verifier et Corriger toute Erreur de Validation Svp!!")
+}
+else {
+var rep =  window.open("","MsgWindow");
+rep.document.write(
+  "<br> Inscription réussite<br>"
+);}
+});
+
+    
+</script>
+
+</html>
