@@ -13,7 +13,7 @@
         width: 1050px;
         margin: auto;
     }
-    
+    /*disposer cote à cote les deux formulaires*/
 .grid-container {
   display: inline-grid;
   grid-template-columns: auto auto;
@@ -84,6 +84,7 @@ form a{
   float: left;
   width: 50%;
 }
+/*Taille des input*/
 input[type=number],[type=email],[type=password]{
   width: 100%;
   padding-bottom: 12px;
@@ -103,11 +104,13 @@ input[name=nom]{
   border: 1px solid #ccc;
   border-radius: 3px;
 }
+/*couleur des champs quand ils sont saisi*/
 input:focus {
     outline: none !important;
     border-color:#2d68a0;
     box-shadow: 0 0 10px #719ECE;
 }
+/*Mettre en majuscule les labels*/
 label{
     text-transform: uppercase;
     font-size: 15px;
@@ -140,14 +143,15 @@ label{
     margin: 0 .5em;
 }
 button{
-    cursor: pointer;
+    cursor: pointer; /*pointeur du curseur(facultatif) */
 }
+/*Pour oeil du mdp*/
 .field-icon {
   float: right;
-  margin-left: -25px;
+  margin-left: -25px; /*gestion des marges*/
   margin-top: -25px;
   position: relative;
-  z-index: 2;
+  z-index: 2; /*empilement*/
 }
 
 .container{
@@ -178,12 +182,12 @@ p{
             <br>
         
         <form action="/action_page.php">
-            <label for="Email">Email</label><br>
-            <input type="email" id="Email" name="Email" required>
+            <label for="Email">Email
+            <input type="email" id="Email" name="Email" required></label>
             <span id="Mail_Manquant"></span>
             <br>
-            <label for="pwd">Mot-de-passe</label><br>
-            <input type="password" id="pwd" name="password" required>
+            <label for="pwd">Mot-de-passe
+            <input type="password" id="pwd" name="password" required></label>
             <span id="Mdp_Manquant"></span>
             <span onclick="myFunction()" class="fa fa-fw fa-eye field-icon"></span>
             <br>
@@ -200,18 +204,18 @@ p{
         
         <form action="/action_page.php">
             <div class="col-50">
-                <label for="prenom">Prénom</label>
-                <input type="text" id="prenom" name="prenom" required>
+                <label for="prenom">Prénom
+                <input type="text" id="prenom" name="prenom" required></label>
                 <span id="Prenom_Manquant"></span>
             </div>
             <div class="col-50">
-                <label for="nom">Nom</label>
-                <input type="text" id="nom" name="nom" required>
+                <label for="nom">Nom
+                <input type="text" id="nom" name="nom" required></label>
                 <span id="Nom_Manquant"></span>
             </div>
           
-            <label for="tel">Téléphone</label><br>
-            <input type="number" id="tel" name="telephone" required>
+            <label for="tel">Téléphone
+            <input type="number" id="tel" name="telephone" required></label><br>
             <span id="Tel_Manquant"></span>
             <br><br><br>
             
@@ -224,6 +228,7 @@ p{
 </section>
     
 </body>
+
 <script  type="text/javascript">
 function myFunction() {
   var x = document.getElementById("pwd");
